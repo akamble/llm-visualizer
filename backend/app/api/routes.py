@@ -7,9 +7,12 @@ Adding a new lesson later means adding one route here and one module in
 from fastapi import APIRouter
 
 from app.core import concepts
+from app.core.embeddings import run_embeddings
 from app.core.text_pipeline import run_pipeline
 from app.core.tokenization import run_tokenization
 from app.models.schemas import (
+    EmbeddingsRequest,
+    EmbeddingsResponse,
     PipelineResponse,
     TextRequest,
     TokenizationRequest,
@@ -41,3 +44,9 @@ def text_pipeline(req: TextRequest):
 def text_tokenize(req: TokenizationRequest):
     """Lesson 2: train BPE merges, then encode the text into subword tokens."""
     return run_tokenization(req.text, req.num_merges)
+
+
+@router.post("/text/embeddings", response_model=EmbeddingsResponse)
+def text_embeddings(req: EmbeddingsRequest):
+    """Lesson 3: TF-IDF vectors + cosine similarity + query ranking."""
+    return run_embeddings(req.documents, req.query)

@@ -102,10 +102,39 @@ export interface TokenizationResult {
   response: string;
 }
 
+export interface EmbeddingsResult {
+  documents: string[];
+  query: string;
+  vocab: string[];
+  tf: number[][];
+  idf: Record<string, number>;
+  tfidf: number[][];
+  query_vector: number[];
+  similarity_matrix: number[][];
+  ranking: { doc_index: number; doc: string; score: number }[];
+  worked_example: {
+    a_index: number;
+    b_index: number;
+    a_doc: string;
+    b_doc: string;
+    dot: number;
+    norm_a: number;
+    norm_b: number;
+    score: number;
+    formula: string;
+  };
+  explainers: { tfidf: string; cosine: string; search: string };
+  field_map: { step: string; field: string; why: string }[];
+  code_sample: string;
+  response: string;
+}
+
 export const api = {
   hierarchy: () => getJSON<Hierarchy>("/api/concepts/hierarchy"),
   pipeline: (text: string) =>
     postJSON<PipelineResult>("/api/text/pipeline", { text }),
   tokenize: (text: string, num_merges: number) =>
     postJSON<TokenizationResult>("/api/text/tokenize", { text, num_merges }),
+  embeddings: (documents: string[], query: string) =>
+    postJSON<EmbeddingsResult>("/api/text/embeddings", { documents, query }),
 };

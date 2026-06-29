@@ -42,5 +42,6 @@ def root():
             "/api/concepts/roadmap",
             "/api/text/pipeline",
             "/api/text/tokenize",
+            "/api/text/embeddings",
         ],
     }
