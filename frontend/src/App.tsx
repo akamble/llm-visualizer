@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
 import BigPicture from "./pages/BigPicture";
 import TextPipeline from "./pages/TextPipeline";
+import Tokenization from "./pages/Tokenization";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
         <nav>
           <Link to="/">Big Picture</Link>
           <Link to="/pipeline">Lesson 1: Text → Response</Link>
+          <Link to="/tokenization">Lesson 2: Tokenization</Link>
         </nav>
       </header>
 
@@ -17,6 +19,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<BigPicture />} />
           <Route path="/pipeline" element={<TextPipeline />} />
+          <Route path="/tokenization" element={<Tokenization />} />
         </Routes>
       </main>
 

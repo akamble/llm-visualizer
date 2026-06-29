@@ -115,8 +115,8 @@ input — nothing is faked.
 
 ## 🗺️ Roadmap (basic → advanced → agentic)
 
-1. ✅ **Text Fundamentals** — text → numbers → vectors → weights *(this module)*
-2. ⏳ Tokenization (subword / BPE)
+1. ✅ **Text Fundamentals** — text → numbers → vectors → weights
+2. ✅ **Tokenization** — subword tokens via Byte-Pair Encoding (BPE)
 3. ⏳ Embeddings & similarity (cosine, TF-IDF)
 4. ⏳ Positional encoding
 5. ⏳ Self-attention (Q / K / V)
