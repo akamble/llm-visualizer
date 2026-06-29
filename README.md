@@ -117,7 +117,7 @@ input — nothing is faked.
 
 1. ✅ **Text Fundamentals** — text → numbers → vectors → weights
 2. ✅ **Tokenization** — subword tokens via Byte-Pair Encoding (BPE)
-3. ⏳ Embeddings & similarity (cosine, TF-IDF)
+3. ✅ **Embeddings & Similarity** — TF-IDF vectors, cosine similarity, query ranking
 4. ⏳ Positional encoding
 5. ⏳ Self-attention (Q / K / V)
 6. ⏳ Logits & softmax (turning numbers into probabilities)

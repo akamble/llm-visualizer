@@ -6,7 +6,7 @@ to stay readable rather than fighting the type system. Tighten these later as
 the data shapes stabilise.
 """
 
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 from pydantic import BaseModel, Field
 
@@ -53,6 +53,41 @@ class TokenizationResponse(BaseModel):
     training: Dict[str, Any]
     encoding: Dict[str, Any]
     comparison: Dict[str, Any]
+    explainers: Dict[str, str]
+    field_map: list[Dict[str, str]]
+    code_sample: str
+    response: str
+
+
+class EmbeddingsRequest(BaseModel):
+    """Input for the TF-IDF + cosine similarity lesson."""
+    documents: List[str] = Field(
+        default_factory=lambda: [
+            "the cat sat on the mat",
+            "the dog sat on the log",
+            "machine learning models learn from data",
+            "deep learning is a kind of machine learning",
+        ],
+        description="The set of documents to vectorize and compare.",
+    )
+    query: str = Field(
+        default="learning from data",
+        description="A search query to rank the documents against.",
+    )
+
+
+class EmbeddingsResponse(BaseModel):
+    """Output of /api/text/embeddings — vectors, similarity matrix, ranking."""
+    documents: List[str]
+    query: str
+    vocab: List[str]
+    tf: List[List[float]]
+    idf: Dict[str, float]
+    tfidf: List[List[float]]
+    query_vector: List[float]
+    similarity_matrix: List[List[float]]
+    ranking: List[Dict[str, Any]]
+    worked_example: Dict[str, Any]
     explainers: Dict[str, str]
     field_map: list[Dict[str, str]]
     code_sample: str
