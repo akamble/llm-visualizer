@@ -37,5 +37,10 @@ def root():
     return {
         "message": "LLM Visualizer backend is running.",
         "docs": "/docs",
-        "lessons": ["/api/concepts/hierarchy", "/api/concepts/roadmap", "/api/text/pipeline"],
+        "lessons": [
+            "/api/concepts/hierarchy",
+            "/api/concepts/roadmap",
+            "/api/text/pipeline",
+            "/api/text/tokenize",
+        ],
     }
