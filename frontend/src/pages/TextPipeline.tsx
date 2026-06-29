@@ -2,7 +2,7 @@ import { useState } from "react";
 import { api, type PipelineResult, type TokenRow } from "../api";
 
 /**
- * Lesson 1 visualizer. Sends text to the backend and renders every step of the
+ * Module 1 visualizer. Sends text to the backend and renders every step of the
  * conversion: normalize -> tokenize -> vocab (numbers) -> one-hot -> embedding
  * -> hidden layer (weights) -> co-occurrence grid (Cartesian product) -> response.
  */
@@ -26,7 +26,7 @@ export default function TextPipeline() {
 
   return (
     <div>
-      <h2>Lesson 1 — How text becomes a response</h2>
+      <h2>Module 1 — How text becomes a response</h2>
       <p className="muted">
         Type a sentence and watch it turn into numbers, then vectors, then pass
         through a neural-network layer. Every number is computed live by the

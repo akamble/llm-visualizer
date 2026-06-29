@@ -92,3 +92,34 @@ class EmbeddingsResponse(BaseModel):
     field_map: list[Dict[str, str]]
     code_sample: str
     response: str
+
+
+class PositionalRequest(BaseModel):
+    """Input for the positional-encoding lesson."""
+    text: str = Field(
+        default="the dog bites the man",
+        description="Sentence to add positional encodings to.",
+        examples=["the dog bites the man", "order changes meaning"],
+    )
+    dim: int = Field(
+        default=8,
+        ge=4,
+        le=16,
+        description="Embedding dimension (even); drives the slider.",
+    )
+
+
+class PositionalResponse(BaseModel):
+    """Output of /api/text/positional — PE matrix, per-token sums, order demo."""
+    input: str
+    dim: int
+    tokens: List[str]
+    pe_matrix: List[List[float]]
+    per_token: List[Dict[str, Any]]
+    position_similarity: List[List[float]]
+    worked_example: Dict[str, Any]
+    order_demo: Dict[str, Any]
+    explainers: Dict[str, str]
+    field_map: list[Dict[str, str]]
+    code_sample: str
+    response: str

@@ -70,9 +70,9 @@ def get_roadmap() -> List[Dict[str, object]]:
     """The basic -> advanced -> agentic learning path."""
     modules = [
         ("Text Fundamentals", "text → numbers → vectors → weights", "done"),
-        ("Tokenization", "splitting text into subword tokens (BPE)", "planned"),
-        ("Embeddings & Similarity", "dense vectors, cosine, TF-IDF", "planned"),
-        ("Positional Encoding", "giving the model a sense of word order", "planned"),
+        ("Tokenization", "splitting text into subword tokens (BPE)", "done"),
+        ("Embeddings & Similarity", "dense vectors, cosine, TF-IDF", "done"),
+        ("Positional Encoding", "giving the model a sense of word order", "done"),
         ("Self-Attention", "Query / Key / Value, the heart of Transformers", "planned"),
         ("Logits & Softmax", "turning raw scores into probabilities", "planned"),
         ("Sampling & Generation", "temperature, top-k, producing text", "planned"),

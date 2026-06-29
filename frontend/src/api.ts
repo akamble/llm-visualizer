@@ -129,6 +129,36 @@ export interface EmbeddingsResult {
   response: string;
 }
 
+export interface PositionalResult {
+  input: string;
+  dim: number;
+  tokens: string[];
+  pe_matrix: number[][];
+  per_token: {
+    position: number;
+    token: string;
+    embedding: number[];
+    positional: number[];
+    result: number[];
+  }[];
+  position_similarity: number[][];
+  worked_example: {
+    pos: number;
+    even: { dim: number; formula: string; calc: string };
+    odd: { dim: number; formula: string; calc: string };
+    note: string;
+  };
+  order_demo: {
+    a: { sentence: string; vectors: { token: string; position: number; result: number[] }[] };
+    b: { sentence: string; vectors: { token: string; position: number; result: number[] }[] };
+    note: string;
+  };
+  explainers: { why: string; how: string; added: string };
+  field_map: { step: string; field: string; why: string }[];
+  code_sample: string;
+  response: string;
+}
+
 export const api = {
   hierarchy: () => getJSON<Hierarchy>("/api/concepts/hierarchy"),
   pipeline: (text: string) =>
@@ -137,4 +167,6 @@ export const api = {
     postJSON<TokenizationResult>("/api/text/tokenize", { text, num_merges }),
   embeddings: (documents: string[], query: string) =>
     postJSON<EmbeddingsResult>("/api/text/embeddings", { documents, query }),
+  positional: (text: string, dim: number) =>
+    postJSON<PositionalResult>("/api/text/positional", { text, dim }),
 };

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { api, type EmbeddingsResult } from "../api";
 
 /**
- * Lesson 3 visualizer — Embeddings & Similarity.
+ * Module 3 visualizer — Embeddings & Similarity.
  *
  * Turns documents into TF-IDF vectors, measures pairwise cosine similarity, and
  * ranks the documents against a search query (a tiny search engine).
@@ -36,7 +36,7 @@ export default function Embeddings() {
 
   return (
     <div>
-      <h2>Lesson 3 — Embeddings &amp; Similarity (TF-IDF + cosine)</h2>
+      <h2>Module 3 — Embeddings &amp; Similarity (TF-IDF + cosine)</h2>
       <p className="muted">
         Now we turn whole <b>documents</b> into vectors and measure how similar
         they are — the foundation of search, recommendations, and (later) RAG.

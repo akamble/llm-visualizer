@@ -2,7 +2,7 @@ import { useState } from "react";
 import { api, type TokenizationResult } from "../api";
 
 /**
- * Lesson 2 visualizer — Byte-Pair Encoding (BPE).
+ * Module 2 visualizer — Byte-Pair Encoding (BPE).
  *
  * Two phases, exactly like a real tokenizer:
  *   1. TRAIN merge rules on a fixed corpus (shown step-by-step).
@@ -29,7 +29,7 @@ export default function Tokenization() {
 
   return (
     <div>
-      <h2>Lesson 2 — Tokenization with Byte-Pair Encoding (BPE)</h2>
+      <h2>Module 2 — Tokenization with Byte-Pair Encoding (BPE)</h2>
       <p className="muted">
         Real LLMs don't split text into whole words — they use <b>subword</b>{" "}
         tokens learned by an algorithm called BPE. Watch it learn merge rules,
