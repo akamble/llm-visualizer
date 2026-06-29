@@ -1,0 +1,6 @@
+# Lesson 1 dependencies — intentionally minimal so everything runs locally.
+# Loose lower-bound pins so wheels resolve on the latest Python (3.12 – 3.14).
+fastapi>=0.115
+uvicorn[standard]>=0.30
+numpy>=2.1
+pydantic>=2.9
